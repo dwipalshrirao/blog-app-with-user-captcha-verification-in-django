@@ -1,10 +1,11 @@
 # blog-app-with-user-captcha-verification-in-django
+    
     This is simple blogging aplication where user can apply CRUD operation on his blogs and can see other user's blogs. 
 
 ## Project look:
 
 <p align="center" width="100%">
-    <img src="https://github.com/dwipalshrirao/project_look.gif"> 
+    <img src="https://github.com/dwipalshrirao/blob/main/project_look.gif"> 
 </p>
 
 ## Features of project:
@@ -12,7 +13,7 @@
 
 1. **Register user with captcha verification**. user need to solve arithematic captcha before get Register.
 <p align="center" width="100%">
-    <img src="https://github.com/dwipalshrirao/screenshot.png"> 
+    <img src="https://github.com/dwipalshrirao/blob/main/screenshot.png"> 
 </p>
 
 2. **CRUD operation on blogs**. user can create, update, delete and view his own blogs.
