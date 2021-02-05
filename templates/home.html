@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{%block activeclass_home%}
+
+class="active"
+{%endblock%}
+
+{%block style%}
+<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+{%endblock%}
+
+{% block content %}
+<center>
+    
+    <h1 >Your Blogs</h1>
+</center>
+
+<div style="display: flex;flex-direction:row;flex-wrap: wrap;">
+{%for i in blog%}
+
+    <div class="card" >
+        <img src="{{i.image.url}}" style="width:100%; border-style: groove;" alt="">
+    <div class="container">
+ 
+            <h4><b>{{i.title}}</b></h4> 
+            <p>{{i.description| truncatechars:150}}</p> 
+            <div class="btn-group">
+                <a href="{%url 'blogapp:singleblog' i.id %}">
+
+                    <button class="read" >Read more</button>
+                </a>
+                <a href="{%url 'blogapp:updateblog' i.id %}">
+
+                    <button class="update">Update</button>
+                </a>
+                
+                <a href="{%url 'blogapp:deleteblog' i.id %}">
+
+
+                <button class="delete">Delete</button>
+                </a>
+              </div>
+        </div>
+    </div>
+    {%endfor%}
+</div>
+
+
+
+
+{%endblock%}

@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{%block activeclass_create_blg%} 
+
+
+class="active"
+{%endblock%}
+
+{%block style%}
+<link rel="stylesheet" href="{% static 'css/form.css' %}">
+{%endblock%}
+
+{% block content %}
+
+<form id="form" method="post" style="margin: 9vw 25vw; " enctype="multipart/form-data">
+    <center>
+        <h2>write a Blog</h2>
+    </center>
+    {% csrf_token %}
+    
+    {{ form.non_field_errors }}
+    <div class="container1" >
+      <label for="{ form.Username.id_for_label }}"><b>Title</b></label>
+      <!-- <input type="text" placeholder="Enter Username" name="uname" required> -->
+      {{ form.title }}
+      {{ form.username.errors }}
+      <label for="{ form.description.id_for_label }}"><b>Description</b></label>
+      <!-- <input type="password" placeholder="Enter Password" name="psw" required> -->
+      {{ form.description }}
+      {{ form.description.errors }}
+      <br>
+      <br>
+      <label for="{ form.image.id_for_label }}"><b>Image</b></label>
+      <!-- <input type="password" placeholder="Enter Password" name="psw" required> -->
+      {{ form.image }}
+      {{ form.image.errors }}
+      <br>
+      <br>
+      <label for="{ form.status.id_for_label }}"><b>Status</b></label>
+      <!-- <input type="password" placeholder="Enter Password" name="psw" required> -->
+      {{ form.status }}
+      {{ form.status.errors }}
+      
+      <button id="button" type="submit">submit</button>
+      {{ form.author.errors }}
+      <!-- <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+  
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div> -->
+  </form>
+  
+{%endblock%}
